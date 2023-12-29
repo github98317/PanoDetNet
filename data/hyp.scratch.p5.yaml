@@ -1,0 +1,33 @@
+lr0: 0.01  # initial learning rate (SGD=1E-2, Adam=1E-3) 学习率
+lrf: 0.1  # final OneCycleLR learning rate (lr0 * lrf) 余弦退火超参数
+momentum: 0.937  # SGD momentum/Adam beta1  学习率动量
+weight_decay: 0.0005  # optimizer weight decay 5e-4 权重衰减系数
+warmup_epochs: 3.0  # warmup epochs (fractions ok) 预热学习epoch
+warmup_momentum: 0.8  # warmup initial momentum  预热学习率动量
+warmup_bias_lr: 0.1  # warmup initial bias lr   预热学习率
+box: 0.05  # box loss gain     giou损失的系数
+cls: 0.3  # cls loss gain     分类损失的系数
+cls_pw: 1.0  # cls BCELoss positive_weight    分类BCELoss中正样本的权重
+obj: 0.7  # obj loss gain (scale with pixels)  有无物体损失的系数
+obj_pw: 1.0  # obj BCELoss positive_weight   有无物体BCELoss中正样本的权重
+iou_t: 0.20  # IoU training threshold    标签与anchors的iou阈值iou training threshold
+anchor_t: 4.0  # 标签的长h宽w/anchor的长h_a宽w_a阈值, 即h/h_a, w/w_a都要在(1/2.91, 2.91)之间anchor-multiple threshold
+#anchors: 5  # anchors per output layer (0 to ignore)
+# 下面是一些数据增强的系数, 包括颜色空间和图片空间
+fl_gamma: 0.0  # focal loss gamma (efficientDet default gamma=1.5)
+hsv_h: 0.015  # 调整图像的色调（hue）的幅度，取值为0到1之间的小数
+hsv_s: 0.7  # 调整图像的饱和度（saturation）的幅度，取值为0到1之间的小数
+hsv_v: 0.4  # 调整图像的明度（value）的幅度，取值为0到1之间的小数
+degrees: 0.0  # 图像旋转的角度，取值为0到360之间的整数
+translate: 0.2  # 图像平移的幅度，取值为0到1之间的小数
+scale: 0.9  # 图像缩放的幅度，取值为0到1之间的小数
+shear: 0.0  # 图像扭曲的角度，取值为0到180之间的整数
+perspective: 0.0  # 图像透视变换的幅度，取值为0到0.001之间的小数
+flipud: 0.0  # 上下翻转图像的概率，取值为0到1之间的小数
+fliplr: 0.5  # 左右翻转图像的概率，取值为0到1之间的小数
+mosaic: 1.0  #  使用马赛克技术随机拼接多张图像的概率，取值为0到1之间的小数
+mixup: 0.15  #  使用mixup技术将多张图像混合的概率，取值为0到1之间的小数
+copy_paste: 0.0  #  使用图像复制和粘贴技术将多张图像混合的概率，取值为0到1之间的小数
+paste_in: 0.15  # 在单张图像上进行复制和粘贴的概率，取值为0到1之间的小数。如果设置为0，则不执行此操作
+loss_ota: 1 # use ComputeLossOTA, use 0 for faster training
+#SlideLoss: 0.5

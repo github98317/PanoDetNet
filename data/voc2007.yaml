@@ -1,0 +1,10 @@
+train: /home/lwh/shareDirs/YOLO/VOC2007/train.txt  # 118287 images
+val: /home/lwh/shareDirs/YOLO/VOC2007/val.txt  # 5000 images
+test: /home/lwh/shareDirs/YOLO/VOC2007/test.txt  # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
+
+# number of classes
+nc: 20
+
+# class names
+names: ["aeroplane", 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable', 'dog',
+           'horse', 'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor']
